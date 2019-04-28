@@ -9,10 +9,8 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-
   final messages = <String>[];
   final messageController = ScrollController();
-
 
   @override
   void initState() {
@@ -22,7 +20,6 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -97,12 +94,10 @@ class MyAppState extends State<MyApp> {
   List<Widget> _buildMessageList() {
     return messages
         .map((String message) => Card(
-              color: Colors.white70,
-              child: ListTile(
-                subtitle: Text(message),
-                dense: true,
-              ),
-            ))
+            color: Colors.white70,
+            child: Center(
+              child: Text(message, style: TextStyle(fontSize: 24.0)),
+            )))
         .toList()
         .reversed
         .toList();
